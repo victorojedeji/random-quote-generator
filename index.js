@@ -3,24 +3,37 @@ const button = document.getElementById("button");
 const author = document.querySelector(".author");
 
 
+const twitterBtn = documment.getElementById("twitter");
+const speechBtn = documment.getElementById("speech");
+const clipBoardBtn = documment.getElementById("copy");
 
-button.addEventListener("click", moreRandomQuotes);
 
 function moreRandomQuotes() {
-    
-   fetch("https://api.quotable.io/random").then(res => res.json()).then(randomQuote => {
-       console.log(randomQuote)
-       
-   quote.innerText = randomQuote.content;
-   author.innerText = randomQuote.author;
+  button.innerText = "Loading quote..."
+  fetch("https://api.quotable.io/random").then(res => res.json()).then(randomQuote => {
+  quote.innerText = randomQuote.content;
+  author.innerText = randomQuote.author;
+  button.innerText = "More Quotes";
+  });
+};
 
-   });
-}
 
-function copy() {
- var copyText = document.querySelector(".quote").innerText;
-  copyText.select();
-  document.execCommand("copy");
-}
+clipBoardBtn.addEventListener("click", () => {
+  navigator.clipboard.writeText(quote.innerText)
+})
 
-document.querySelector("#copy").addEventListener("click", copy);
+
+speechBtn.addEventListener("click", () => {
+  const vocal = new SpeechSynthesisUtterance(`${quote.innerText}`);
+  speechSynthesis.speak(vocal);
+});
+
+
+
+twitterBtn.addEventListener("click", () => {
+  let twitterLink = `https://twitter.com/intent/tweet?url=${quote.innerText}`;
+  window.open(twitterLink, "_blank");
+});
+
+
+button.addEventListener("click", moreRandomQuotes);
