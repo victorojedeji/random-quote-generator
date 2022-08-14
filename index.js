@@ -3,13 +3,14 @@ const button = document.getElementById("button");
 const author = document.querySelector(".author");
 
 
-const twitterBtn = documment.getElementById("twitter");
-const speechBtn = documment.getElementById("speech");
-const clipBoardBtn = documment.getElementById("copy");
+const twitterBtn = document.getElementById("twitter");
+const speechBtn = document.getElementById("speech");
+const clipBoardBtn = document.getElementById("copy");
 
 
 function moreRandomQuotes() {
-  button.innerText = "Loading quote..."
+  button.innerText = "Loading quote...";
+
   fetch("https://api.quotable.io/random").then(res => res.json()).then(randomQuote => {
   quote.innerText = randomQuote.content;
   author.innerText = randomQuote.author;
@@ -24,7 +25,7 @@ clipBoardBtn.addEventListener("click", () => {
 
 
 speechBtn.addEventListener("click", () => {
-  const vocal = new SpeechSynthesisUtterance(`${quote.innerText}`);
+  const vocal = new SpeechSynthesisUtterance(`${quote.innerText} by ${author.innerText}.`);
   speechSynthesis.speak(vocal);
 });
 
