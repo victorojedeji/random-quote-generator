@@ -1,0 +1,48 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    font-size: 1rem;
+}
+
+.main {
+    width: 50%;
+    max-width: 700px;
+    min-width: 400px;
+    margin: 10em auto;
+    border: 1px solid black;
+    border-radius: .5em;
+    padding: 1em;
+}
+
+.header {
+    text-align: center;
+    margin-bottom: 1em;
+}
+
+.quote-section {
+    display: flex;
+    margin-bottom: 1em;
+}
+
+.fa-quote-left {
+    justify-content: flex-end;
+}
+
+li {
+    list-style: none;
+    display: inline;
+}
+
+#button {
+    margin-left: auto;
+    display: block;
+}
+
+.author-wrapper {
+    margin-left: auto;
+}
