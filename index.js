@@ -9,7 +9,7 @@ const clipBoardBtn = document.getElementById("copy");
 
 
 function moreRandomQuotes() {
-  button.innerText = "Loading quote...";
+  button.innerText = "Loading...";
 
   fetch("https://api.quotable.io/random").then(res => res.json()).then(randomQuote => {
   quote.innerText = randomQuote.content;
