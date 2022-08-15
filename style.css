@@ -19,7 +19,8 @@ body {
     border-radius: .5em;
     padding: 1em;
     background-color: #e6f5f5;
-
+    -webkit-box-shadow: 3px 4px 38px -3px rgba(0,0,0,0.81); 
+    box-shadow: 3px 4px 38px -3px rgba(0,0,0,0.81);
 }
 
 .header {
@@ -39,18 +40,17 @@ body {
 
 }
 
-.fa  {
+.fa-quote-left {
+    align-self: flex-end;
+    color: #292727;
     margin-left: .5em;
     margin-right: .5em;
 }
 
-.fa-quote-left {
-    align-self: flex-end;
-    color: #292727;
-}
-
 .fa-quote-right {
     color: #292727;
+    margin-left: .5em;
+    margin-right: .5em;
 }
 
 li {
