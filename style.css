@@ -27,15 +27,27 @@ body {
 .quote-section {
     display: flex;
     margin-bottom: 1em;
+    justify-content: center;
+}
+
+.quote {
+    margin-bottom: 1em;
+
+}
+
+.fa  {
+    margin-left: .5em;
+    margin-right: .5em;
 }
 
 .fa-quote-left {
-    justify-content: flex-end;
+    align-self: flex-end;
 }
 
 li {
     list-style: none;
     display: inline;
+    margin-right: .7em;
 }
 
 #button {
@@ -45,4 +57,9 @@ li {
 
 .author-wrapper {
     margin-left: auto;
+}
+
+.author {
+    text-decoration: underline;
+    
 }
